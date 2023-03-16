@@ -22,6 +22,8 @@ class Publicacion_Schema(ma.Schema):
 post_schema = Publicacion_Schema()
 posts_schema = Publicacion_Schema(many = True)
 
+db.create_all()
+
 class RecursoListarPublicaciones(Resource):
     def get(self):
         publicaciones = Publicacion.query.all()
