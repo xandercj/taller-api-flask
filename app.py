@@ -32,7 +32,7 @@ class RecursoListarPublicaciones(Resource):
                 titulo = request.json['titulo'],
                 contenido=request.json['contenido']
             )
-            print()
+            print(titulo)
             db.session.add(nueva_publicacion)
             db.session.commit()
             return post_schema.dump(nueva_publicacion)
