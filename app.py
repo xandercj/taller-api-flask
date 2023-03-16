@@ -22,8 +22,6 @@ class Publicacion_Schema(ma.Schema):
 post_schema = Publicacion_Schema()
 posts_schema = Publicacion_Schema(many = True)
 
-db.create_all()
-
 class RecursoListarPublicaciones(Resource):
     def get(self):
         publicaciones = Publicacion.query.all()
@@ -66,4 +64,5 @@ api.add_resource(RecursoListarPublicaciones, '/publicaciones')
 api.add_resource(RecursoUnaPublicacion, '/publicaciones/<int:id_publicacion>')
 
 if __name__ == '__main__':
-     app.run(debug=True)
+    app.run(debug=True)
+    db.create_all()
