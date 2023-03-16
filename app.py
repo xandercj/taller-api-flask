@@ -28,6 +28,7 @@ class RecursoListarPublicaciones(Resource):
         return posts_schema.dump(publicaciones)
     
     def post(self):
+            titulo = ""
             nueva_publicacion = Publicacion(
                 titulo = request.json['titulo'],
                 contenido=request.json['contenido']
