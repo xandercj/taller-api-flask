@@ -12,6 +12,7 @@ Para ejecutar la aplicación siga las siguientes instrucciones:
 * ```$ pip install flask``` 
 * ```$ pip install flask-restful```
 * ```$ pip install flask-marshmallow```
+* ```$ pip install flask-sqlalchemy```
 
 ## Configurar variables de entorno
 * ```$ export FLASK_APP=app.py```
