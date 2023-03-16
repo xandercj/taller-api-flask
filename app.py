@@ -64,6 +64,7 @@ api.add_resource(RecursoListarPublicaciones, '/publicaciones')
 api.add_resource(RecursoUnaPublicacion, '/publicaciones/<int:id_publicacion>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
     db.init_app(app)
     db.create_all()
+    app.run(debug=True)
+    
