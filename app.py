@@ -15,6 +15,8 @@ class Publicacion(db.Model):
     titulo = db.Column( db.String(50) )
     contenido = db.Column( db.String(255) )
     
+db.create_all()
+
 class Publicacion_Schema(ma.Schema):
     class Meta:
         fields = ("id", "titulo", "contenido")
@@ -64,7 +66,5 @@ api.add_resource(RecursoListarPublicaciones, '/publicaciones')
 api.add_resource(RecursoUnaPublicacion, '/publicaciones/<int:id_publicacion>')
 
 if __name__ == '__main__':
-    db.init_app(app)
-    db.create_all()
     app.run(debug=True)
     
